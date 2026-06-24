@@ -1,0 +1,425 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Muhammad AbuBakar Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --bg-color: #0d0f14;
+            --card-bg: rgba(20, 24, 33, 0.85);
+            --glow-pink: #ff6b81;
+            --glow-cyan: #00f2fe;
+            --text-color: #ffffff;
+            --muted-text: #b3b9c9;
+        }
+
+        /* Professional Animated Lighting Background */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(-45deg, #0d0f14, #161a24, #0f131c, #131722);
+            background-size: 400% 400%;
+            animation: professionalGlow 15s ease infinite;
+        }
+
+        @keyframes professionalGlow {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* Tech Glowing Frame */
+        .portfolio-container {
+            max-width: 1150px;
+            margin: 50px auto;
+            padding: 40px;
+            background: var(--card-bg);
+            border-radius: 24px;
+            border: 2px solid rgba(0, 242, 254, 0.25);
+            box-shadow: 0 0 35px rgba(0, 242, 254, 0.15), inset 0 0 20px rgba(255, 107, 129, 0.05);
+            backdrop-filter: blur(12px);
+        }
+
+        /* Hero Header */
+        .hero-section {
+            text-align: center;
+            padding-bottom: 35px;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .profile-img {
+            width: 160px;
+            height: 160px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--glow-cyan);
+            box-shadow: 0 0 25px rgba(0, 242, 254, 0.5);
+            transition: 0.3s;
+        }
+
+        .profile-img:hover {
+            transform: scale(1.03);
+            border-color: var(--glow-pink);
+            box-shadow: 0 0 25px rgba(255, 107, 129, 0.5);
+        }
+
+        /* Professional Shimmer Name Animation */
+        h1 {
+            font-size: 3rem;
+            margin: 15px 0 5px 0;
+            background: linear-gradient(45deg, var(--glow-cyan), var(--glow-pink), var(--glow-cyan));
+            background-size: 200% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            letter-spacing: 1px;
+            animation: nameShimmer 4s linear infinite;
+        }
+
+        @keyframes nameShimmer {
+            0% { background-position: 0% center; }
+            100% { background-position: 200% center; }
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--muted-text);
+            margin-bottom: 25px;
+            font-weight: 300;
+        }
+
+        /* Social Media Actions */
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .social-btn {
+            padding: 10px 24px;
+            border-radius: 30px;
+            text-decoration: none;
+            color: white;
+            font-weight: bold;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+
+        .linkedin { background: #0077b5; border: 1px solid #00c6ff; }
+        .fiverr { background: #1dbf73; border: 1px solid #10e676; }
+        .facebook { background: #1877f2; border: 1px solid #4facfe; }
+
+        .social-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Resume Sections Layout */
+        .section-title {
+            color: var(--glow-cyan);
+            border-left: 4px solid var(--glow-pink);
+            padding-left: 12px;
+            margin-top: 45px;
+            font-size: 1.6rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .content-block {
+            background: rgba(255, 255, 255, 0.02);
+            padding: 25px;
+            border-radius: 16px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            margin-top: 15px;
+            line-height: 1.7;
+        }
+
+        .resume-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        @media (max-width: 768px) {
+            .resume-grid { grid-template-columns: 1fr; }
+        }
+
+        ul { padding-left: 20px; margin: 0; }
+        li { margin-bottom: 10px; color: #cbd5e1; }
+
+        /* Skill Badges */
+        .skills-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .skill-badge {
+            background: rgba(0, 242, 254, 0.08);
+            border: 1px solid rgba(0, 242, 254, 0.2);
+            color: #e2e8f0;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+
+        /* Language Badges */
+        .lang-badge {
+            background: rgba(255, 107, 129, 0.08);
+            border: 1px solid rgba(255, 107, 129, 0.2);
+            color: #e2e8f0;
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin-right: 8px;
+            display: inline-block;
+        }
+
+        /* Posters Grid */
+        .cert-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 25px;
+            margin-top: 20px;
+        }
+
+        .poster-card {
+            background: #13161f;
+            border-radius: 16px;
+            padding: 15px;
+            border: 1px solid rgba(255, 107, 129, 0.15);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.4);
+            transition: all 0.3s ease;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .poster-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--glow-cyan);
+            box-shadow: 0 12px 25px rgba(0, 242, 254, 0.2);
+        }
+
+        .poster-img {
+            width: 100%;
+            height: 165px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 12px;
+            border: 1px solid rgba(255,255,255,0.05);
+        }
+
+        .poster-title {
+            font-weight: bold;
+            font-size: 1rem;
+            color: #ffffff;
+            margin-bottom: 12px;
+        }
+
+        .btn-container {
+            display: flex;
+            gap: 8px;
+            justify-content: center;
+            margin-top: auto;
+        }
+
+        .verify-btn {
+            padding: 8px 16px;
+            background: linear-gradient(45deg, #00f2fe, #4facfe);
+            color: #0d0f14;
+            border-radius: 20px;
+            text-decoration: none;
+            font-size: 0.8rem;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .verify-btn.pink-btn {
+            background: linear-gradient(45deg, #ff6b81, #ff4757);
+            color: white;
+        }
+
+        .verify-btn:hover {
+            transform: scale(1.02);
+            box-shadow: 0 0 12px rgba(255, 255, 255, 0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="portfolio-container">
+        
+        <!-- Hero Identity Header -->
+        <div class="hero-section">
+            <img src="profile.jpg" alt="Muhammad AbuBakar" class="profile-img">
+            <h1>Muhammad AbuBakar</h1>
+            <div class="subtitle">Data Analyst (Google Certified) | IT Assistant | Graphic Designer | MS Office Expert</div>
+            
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/muhammad-abubakar-65240a3a1?utm_source=share_via&utm_content=profile&utm_medium=member_android" target="_blank" class="social-btn linkedin"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                <a href="https://www.fiverr.com/s/akr44EW" target="_blank" class="social-btn fiverr"><i class="fas fa-shopping-bag"></i> Fiverr Profile</a>
+                <a href="https://www.facebook.com/share/1PkjdMk4Zf/" target="_blank" class="social-btn facebook"><i class="fab fa-facebook"></i> Facebook</a>
+            </div>
+        </div>
+
+        <!-- 1. PROFESSIONAL SUMMARY -->
+        <h2 class="section-title">📝 Professional Summary</h2>
+        <div class="content-block">
+            <p style="margin: 0; color: #cbd5e1;">
+                Motivated IT Assistant, Computer Operator, Data Analyst, and Graphic Designer with strong skills in MS Office, Data Analytics, AI Workflows, Graphic Designing, Data Entry, Reporting, Visualization, Troubleshooting, and Office Automation. Google AI Certified and trained in AI for Data Analysis, Research, Communication, Content Creation, App Building, and Digital Transformation.
+            </p>
+        </div>
+
+        <div class="resume-grid">
+            <!-- 2. EDUCATION -->
+            <div>
+                <h2 class="section-title">🎓 Education</h2>
+                <div class="content-block" style="height: 83%;">
+                    <p style="margin-bottom: 15px;">
+                        <strong>Diploma in Computer Operator & IT Assistant (Level 3)</strong><br>
+                        <span style="color: var(--glow-cyan);">Government Technical Training Center (TEVTA) | Dinga</span>
+                    </p>
+                    <p>
+                        <strong>Matriculation (Science)</strong><br>
+                        <span style="color: var(--muted-text);">Govt. Islamia High School Chak Miana Bhargaran, Gujrat</span>
+                    </p>
+                </div>
+            </div>
+
+            <!-- 3. PROFESSIONAL EXPERIENCE -->
+            <div>
+                <h2 class="section-title">💼 Professional Experience</h2>
+                <div class="content-block">
+                    <ul>
+                        <li>Data cleaning, reporting, visualization, and dashboard preparation.</li>
+                        <li>Professional social media posts, banners, flyers, thumbnails, and branding materials.</li>
+                        <li>AI-assisted coding, AI content creation, and AI-generated multimedia projects.</li>
+                        <li>MS Office documentation, file management, and IT support.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 4. CORE SKILLS -->
+        <h2 class="section-title">⚡ Core Skills</h2>
+        <div class="content-block">
+            <div class="skills-container">
+                <div class="skill-badge">Advanced MS Word, Excel, PowerPoint, Access</div>
+                <div class="skill-badge">Data Analytics & Data Visualization</div>
+                <div class="skill-badge">Data Cleaning & Data Entry</div>
+                <div class="skill-badge">AI Workflows & ChatGPT Integration</div>
+                <div class="skill-badge">AI-Assisted Coding & App Building</div>
+                <div class="skill-badge">Adobe Photoshop, Illustrator & Canva</div>
+                <div class="skill-badge">Graphic Designing & Content Creation</div>
+                <div class="skill-badge">Computer Troubleshooting & IT Support</div>
+                <div class="skill-badge">Research Skills & Data Presentation</div>
+                <div class="skill-badge">Office Automation & Record Management</div>
+            </div>
+        </div>
+
+        <!-- 5. LANGUAGES -->
+        <h2 class="section-title">🌐 Languages</h2>
+        <div class="content-block">
+            <div class="lang-badge"><strong>English</strong> (Professional Working Proficiency)</div>
+            <div class="lang-badge"><strong>Urdu</strong> (Native)</div>
+            <div class="lang-badge"><strong>Punjabi</strong> (Native)</div>
+        </div>
+
+        <!-- 6. CERTIFICATIONS (WITH POSTERS AND PDF LINKS) -->
+        <h2 class="section-title">📜 Certifications & Verification Hub</h2>
+        <p style="color: var(--muted-text); margin-top: 10px; padding-left: 2px;">Click on any poster to view the official PDF document or verify credentials online.</p>
+        
+        <!-- Track A: Featured Programs -->
+        <h3 style="color: #fff; margin-top: 25px; font-size: 1.1rem;"><i class="fas fa-star" style="color: var(--glow-pink);"></i> Core Specializations</h3>
+        <div class="cert-grid">
+            <!-- Google AI Main -->
+            <div class="poster-card" style="border-color: var(--glow-pink);">
+                <img src="google_ai_main.png" alt="Google AI Professional" class="poster-img">
+                <div class="poster-title">Google AI Professional Certificate</div>
+                <div class="btn-container">
+                    <a href="google_ai_main.pdf" target="_blank" class="verify-btn pink-btn">View PDF</a>
+                    <a href="https://coursera.org/verify/professional-cert/QJTMOTZJA7RV" target="_blank" class="verify-btn" style="background: transparent; border: 1px solid #fff; color: #fff;">Online Verify</a>
+                </div>
+            </div>
+
+            <!-- Oxford AI -->
+            <div class="poster-card">
+                <img src="oxford_ai.png" alt="Oxford AI" class="poster-img">
+                <div class="poster-title">AI & Digital Transformation in Government (Oxford)</div>
+                <div class="btn-container">
+                    <a href="oxford_ai.pdf" target="_blank" class="verify-btn" style="width: 100%;">View Official PDF</a>
+                </div>
+            </div>
+
+            <!-- Urdu AI -->
+            <div class="poster-card">
+                <img src="urdu_ai.png" alt="Urdu AI" class="poster-img">
+                <div class="poster-title">Urdu AI Master Class Certificate</div>
+                <div class="btn-container">
+                    <a href="urdu_ai.pdf" target="_blank" class="verify-btn" style="width: 100%;">View Official PDF</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Track B: Data Analytics Modules -->
+        <h3 style="color: #fff; margin-top: 35px; font-size: 1.1rem;"><i class="fas fa-chart-bar" style="color: var(--glow-cyan);"></i> Google Data Analytics Modules Certificate</h3>
+        <div class="cert-grid">
+            <div class="poster-card">
+                <img src="da_foundations.png" class="poster-img">
+                <div class="poster-title">Foundations: Data, Data, Everywhere</div>
+                <a href="da_foundations.pdf" target="_blank" class="verify-btn">Open PDF</a>
+            </div>
+            <div class="poster-card">
+                <img src="da_questions.png" class="poster-img">
+                <div class="poster-title">Ask Questions to Make Decisions</div>
+                <a href="da_questions.pdf" target="_blank" class="verify-btn">Open PDF</a>
+            </div>
+            <div class="poster-card">
+                <img src="da_prepare.png" class="poster-img">
+                <div class="poster-title">Prepare Data for Exploration</div>
+                <a href="da_prepare.pdf" target="_blank" class="verify-btn">Open PDF</a>
+            </div>
+            <div class="poster-card">
+                <img src="da_process.png" class="poster-img">
+                <div class="poster-title">Process Data from Dirty to Clean</div>
+                <a href="da_process.pdf" target="_blank" class="verify-btn">Open PDF</a>
+            </div>
+            <div class="poster-card">
+                <img src="da_analyze.png" class="poster-img">
+                <div class="poster-title">Analyze Data to Answer Questions</div>
+                <a href="da_analyze.pdf" target="_blank" class="verify-btn">Open PDF</a>
+            </div>
+        </div>
+
+        <!-- Track C: Google AI Specialized Sub-Modules -->
+        <h3 style="color: #fff; margin-top: 35px; font-size: 1.1rem;"><i class="fas fa-robot" style="color: var(--glow-cyan);"></i> Google AI Modules Certificate</h3>
+        <div class="cert-grid">
+            <div class="poster-card"><img src="ai_fund.png" class="poster-img"><div class="poster-title">AI Fundamentals</div><a href="ai_fund.pdf" target="_blank" class="verify-btn">View PDF</a></div>
+            <div class="poster-card"><img src="ai_brain.png" class="poster-img"><div class="poster-title">AI for Brainstorming & Planning</div><a href="ai_brain.pdf" target="_blank" class="verify-btn">View PDF</a></div>
+            <div class="poster-card"><img src="ai_research.png" class="poster-img"><div class="poster-title">AI for Research and Insights</div><a href="ai_research.pdf" target="_blank" class="verify-btn">View PDF</a></div>
+            <div class="poster-card"><img src="ai_writing.png" class="poster-img"><div class="poster-title">AI for Writing & Communication</div><a href="ai_writing.pdf" target="_blank" class="verify-btn">View PDF</a></div>
+            <div class="poster-card"><img src="ai_content.png" class="poster-img"><div class="poster-title">AI for Content Creation</div><a href="ai_content.pdf" target="_blank" class="verify-btn">View PDF</a></div>
+            <div class="poster-card"><img src="ai_data.png" class="poster-img"><div class="poster-title">AI for Data Analysis</div><a href="ai_data.pdf" target="_blank" class="verify-btn">View PDF</a></div>
+            <div class="poster-card"><img src="ai_app.png" class="poster-img"><div class="poster-title">AI for App Building</div><a href="ai_app.pdf" target="_blank" class="verify-btn">View PDF</a></div>
+        </div>
+
+        <!-- Footer -->
+        <div style="text-align: center; margin-top: 60px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.05); color: #64748b; font-size: 0.9rem;">
+            <p><i class="fas fa-envelope"></i> muhabubakar2297@gmail.com | 📍 Village Chhimber, Gujrat, Pakistan</p>
+        </div>
+    </div>
+
+</body>
+</html>
